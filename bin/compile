@@ -23,9 +23,10 @@ CACHE_DIR=$2
 ENV_DIR=$3
 BP_DIR=`cd $(dirname $0); cd ..; pwd`
 
+echo "HEROKU_APP_NAME is $HEROKU_APP_NAME"
 
 # If this is a preview app, use docker instead of multi-buildpack
-if [ -n "$HEROKU_PARENT_APP_NAME" ]; then
+if [ -n "$HEROKU_APP_NAME" ]; then
   echo "This is a preview app. Will install docker."
   apt install docker
   exit
