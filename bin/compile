@@ -26,7 +26,6 @@ BP_DIR=`cd $(dirname $0); cd ..; pwd`
 
 # If this is a preview app, use docker instead of multi-buildpack
 echo "This is a preview app. Will install docker."
-apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
 add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 apt update
